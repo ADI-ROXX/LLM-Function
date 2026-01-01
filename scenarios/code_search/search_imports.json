@@ -1,0 +1,35 @@
+{
+  "id": "search_003",
+  "name": "Search with Regex Pattern",
+  "category": "code_search",
+  "prompt": {
+    "user_query": "Find all import statements in the project",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["search_code"],
+    "optional_tools": [],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "search_code": {
+        "pattern": "import"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 1
+  },
+  "hallucination_traps": {
+    "description": "LLM might list imports without actually searching",
+    "common_mistakes": [
+      "Making up import statements",
+      "Not using proper regex pattern",
+      "Searching in specific file instead of entire project"
+    ]
+  },
+  "difficulty": "easy",
+  "expected_time": 10
+}
+

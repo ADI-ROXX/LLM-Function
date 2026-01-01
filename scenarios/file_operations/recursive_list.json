@@ -1,0 +1,36 @@
+{
+  "id": "file_ops_002",
+  "name": "Recursive Directory Listing",
+  "category": "file_ops",
+  "prompt": {
+    "user_query": "Show me all Python files in the project, including subdirectories",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["list_directory"],
+    "optional_tools": ["search_code"],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "list_directory": {
+        "directory_path": ".",
+        "recursive": true
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 2
+  },
+  "hallucination_traps": {
+    "description": "LLM might not use recursive parameter",
+    "common_mistakes": [
+      "Not setting recursive=true",
+      "Listing only top-level directory",
+      "Making up file paths"
+    ]
+  },
+  "difficulty": "medium",
+  "expected_time": 12
+}
+

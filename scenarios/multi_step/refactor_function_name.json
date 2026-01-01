@@ -1,0 +1,35 @@
+{
+  "id": "multi_002",
+  "name": "Refactor Function Name",
+  "category": "multi_step",
+  "prompt": {
+    "user_query": "Rename the function getUserData to get_user_data everywhere in the codebase",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["search_code", "edit_file"],
+    "optional_tools": ["list_directory"],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "search_code": {
+        "pattern": "getUserData"
+      }
+    },
+    "sequence_matters": true,
+    "expected_sequence": ["search_code", "edit_file"],
+    "min_tool_calls": 2,
+    "max_tool_calls": 10
+  },
+  "hallucination_traps": {
+    "description": "LLM might not search first or miss some occurrences",
+    "common_mistakes": [
+      "Not searching for all occurrences",
+      "Editing only one file",
+      "Missing function calls or references"
+    ]
+  },
+  "difficulty": "medium",
+  "expected_time": 25
+}
+

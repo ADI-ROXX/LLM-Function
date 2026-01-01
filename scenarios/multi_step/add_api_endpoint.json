@@ -1,0 +1,32 @@
+{
+  "id": "complex_001",
+  "name": "Full Feature Implementation",
+  "category": "multi_step",
+  "prompt": {
+    "user_query": "Add a new endpoint to the API: GET /health that returns {\"status\": \"ok\"}. First examine the existing endpoints, then add the new one.",
+    "context": "This is a Flask/FastAPI application",
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["search_code", "read_file", "edit_file"],
+    "optional_tools": ["list_directory", "get_function_definition"],
+    "forbidden_tools": [],
+    "required_parameters": {},
+    "sequence_matters": true,
+    "expected_sequence": ["search_code", "read_file", "edit_file"],
+    "min_tool_calls": 3,
+    "max_tool_calls": 8
+  },
+  "hallucination_traps": {
+    "description": "LLM might add endpoint without examining existing code structure",
+    "common_mistakes": [
+      "Not examining existing endpoints",
+      "Adding code without reading file",
+      "Using wrong framework syntax",
+      "Not finding the routes file"
+    ]
+  },
+  "difficulty": "hard",
+  "expected_time": 45
+}
+

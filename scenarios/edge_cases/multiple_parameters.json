@@ -1,0 +1,37 @@
+{
+  "id": "edge_004",
+  "name": "Multiple Parameters Order",
+  "category": "edge_cases",
+  "prompt": {
+    "user_query": "Run the command 'npm test' in the tests directory with a 30 second timeout",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["run_terminal_command"],
+    "optional_tools": [],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "run_terminal_command": {
+        "command": "npm test",
+        "working_directory": "tests",
+        "timeout": 30
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 1
+  },
+  "hallucination_traps": {
+    "description": "LLM might miss optional parameters or use wrong values",
+    "common_mistakes": [
+      "Missing working_directory parameter",
+      "Missing timeout parameter",
+      "Using wrong timeout value"
+    ]
+  },
+  "difficulty": "medium",
+  "expected_time": 10
+}
+

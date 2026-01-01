@@ -1,0 +1,35 @@
+{
+  "id": "search_002",
+  "name": "Find Function Definition",
+  "category": "code_search",
+  "prompt": {
+    "user_query": "Find where the calculate_total function is defined",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["search_code"],
+    "optional_tools": ["get_function_definition"],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "search_code": {
+        "pattern": "calculate_total"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 2
+  },
+  "hallucination_traps": {
+    "description": "LLM might claim to know location without searching",
+    "common_mistakes": [
+      "Guessing file locations",
+      "Not using search_code",
+      "Making up function definitions"
+    ]
+  },
+  "difficulty": "easy",
+  "expected_time": 8
+}
+

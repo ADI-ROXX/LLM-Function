@@ -1,0 +1,35 @@
+{
+  "id": "edge_003",
+  "name": "Case Sensitivity Test",
+  "category": "edge_cases",
+  "prompt": {
+    "user_query": "Search for the function 'ProcessData' in the codebase",
+    "context": "Function names are case-sensitive",
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["search_code"],
+    "optional_tools": [],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "search_code": {
+        "pattern": "ProcessData"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 2
+  },
+  "hallucination_traps": {
+    "description": "LLM might search for wrong case or make assumptions",
+    "common_mistakes": [
+      "Searching for 'processData' or 'process_data'",
+      "Ignoring case sensitivity",
+      "Not using exact pattern"
+    ]
+  },
+  "difficulty": "medium",
+  "expected_time": 8
+}
+

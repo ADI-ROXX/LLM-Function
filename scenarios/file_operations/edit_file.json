@@ -1,0 +1,37 @@
+{
+  "id": "file_edit_001",
+  "name": "Edit Existing File",
+  "category": "file_ops",
+  "prompt": {
+    "user_query": "In config.py, change the port from 8080 to 3000",
+    "context": null,
+    "files_mentioned": ["config.py"]
+  },
+  "expected_behavior": {
+    "required_tools": ["edit_file"],
+    "optional_tools": ["read_file"],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "edit_file": {
+        "file_path": "config.py",
+        "old_text": "8080",
+        "new_text": "3000"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 2
+  },
+  "hallucination_traps": {
+    "description": "LLM might not read file first to verify content",
+    "common_mistakes": [
+      "Making assumptions about file content",
+      "Using incorrect old_text parameter",
+      "Claiming edit is done without calling function"
+    ]
+  },
+  "difficulty": "medium",
+  "expected_time": 10
+}
+

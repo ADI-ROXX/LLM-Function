@@ -1,0 +1,37 @@
+{
+  "id": "edge_001",
+  "name": "Parameter Precision Test",
+  "category": "edge_cases",
+  "prompt": {
+    "user_query": "Read lines 10-20 of data.txt and show me what's there",
+    "context": null,
+    "files_mentioned": ["data.txt"]
+  },
+  "expected_behavior": {
+    "required_tools": ["read_file"],
+    "optional_tools": [],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "read_file": {
+        "file_path": "data.txt",
+        "line_start": 10,
+        "line_end": 20
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 1
+  },
+  "hallucination_traps": {
+    "description": "LLM might use wrong line numbers or miss optional parameters",
+    "common_mistakes": [
+      "Reading entire file instead of specific lines",
+      "Using incorrect line numbers (0-indexed vs 1-indexed)",
+      "Missing line_start or line_end parameters"
+    ]
+  },
+  "difficulty": "medium",
+  "expected_time": 8
+}
+

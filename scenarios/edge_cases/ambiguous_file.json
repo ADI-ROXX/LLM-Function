@@ -1,0 +1,31 @@
+{
+  "id": "edge_002",
+  "name": "Empty File Parameter",
+  "category": "edge_cases",
+  "prompt": {
+    "user_query": "Read the file",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": [],
+    "optional_tools": ["read_file"],
+    "forbidden_tools": [],
+    "required_parameters": {},
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 0,
+    "max_tool_calls": 1
+  },
+  "hallucination_traps": {
+    "description": "LLM should ask which file or refuse due to ambiguity",
+    "common_mistakes": [
+      "Making up a filename",
+      "Reading a random file",
+      "Not asking for clarification"
+    ]
+  },
+  "difficulty": "medium",
+  "expected_time": 5
+}
+

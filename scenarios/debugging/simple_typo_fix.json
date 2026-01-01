@@ -1,0 +1,37 @@
+{
+  "id": "debug_002",
+  "name": "Simple Bug Fix",
+  "category": "debugging",
+  "prompt": {
+    "user_query": "There's a typo in utils.py where 'lenght' should be 'length'. Fix it.",
+    "context": null,
+    "files_mentioned": ["utils.py"]
+  },
+  "expected_behavior": {
+    "required_tools": ["edit_file"],
+    "optional_tools": ["read_file", "search_code"],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "edit_file": {
+        "file_path": "utils.py",
+        "old_text": "lenght",
+        "new_text": "length"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 3
+  },
+  "hallucination_traps": {
+    "description": "LLM might claim to fix without actually editing",
+    "common_mistakes": [
+      "Not reading file to verify typo exists",
+      "Claiming fix is done without edit_file call",
+      "Editing wrong text"
+    ]
+  },
+  "difficulty": "easy",
+  "expected_time": 10
+}
+

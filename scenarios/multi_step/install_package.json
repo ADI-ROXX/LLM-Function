@@ -1,0 +1,35 @@
+{
+  "id": "terminal_001",
+  "name": "Run Simple Command",
+  "category": "multi_step",
+  "prompt": {
+    "user_query": "Install the pytest package",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["run_terminal_command"],
+    "optional_tools": [],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "run_terminal_command": {
+        "command": "pip install pytest"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 1
+  },
+  "hallucination_traps": {
+    "description": "LLM might claim to install without running command",
+    "common_mistakes": [
+      "Not using run_terminal_command",
+      "Claiming package is installed without running pip",
+      "Using wrong package manager"
+    ]
+  },
+  "difficulty": "easy",
+  "expected_time": 10
+}
+

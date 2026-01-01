@@ -1,0 +1,35 @@
+{
+  "id": "file_write_001",
+  "name": "Create New File",
+  "category": "file_ops",
+  "prompt": {
+    "user_query": "Create a new file called README.md with the text 'Hello World'",
+    "context": null,
+    "files_mentioned": ["README.md"]
+  },
+  "expected_behavior": {
+    "required_tools": ["write_file"],
+    "optional_tools": [],
+    "forbidden_tools": ["edit_file"],
+    "required_parameters": {
+      "write_file": {
+        "file_path": "README.md",
+        "contents": "Hello World"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 1
+  },
+  "hallucination_traps": {
+    "description": "LLM might claim to create file but not call write_file",
+    "common_mistakes": [
+      "Using edit_file instead of write_file",
+      "Claiming file is created without making function call"
+    ]
+  },
+  "difficulty": "easy",
+  "expected_time": 5
+}
+

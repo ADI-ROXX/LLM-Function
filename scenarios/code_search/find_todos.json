@@ -1,0 +1,35 @@
+{
+  "id": "search_001",
+  "name": "Find TODO Comments",
+  "category": "code_search",
+  "prompt": {
+    "user_query": "Find all TODO comments in the codebase",
+    "context": "We need to track outstanding work items marked in code",
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["search_code"],
+    "optional_tools": ["list_directory"],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "search_code": {
+        "pattern": "TODO"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 3
+  },
+  "hallucination_traps": {
+    "description": "LLM might search in wrong directory or miss regex pattern requirements",
+    "common_mistakes": [
+      "Searching with wrong pattern",
+      "Not using proper regex",
+      "Searching in specific files instead of entire codebase"
+    ]
+  },
+  "difficulty": "easy",
+  "expected_time": 10
+}
+

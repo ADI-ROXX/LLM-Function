@@ -1,0 +1,35 @@
+{
+  "id": "hallucination_001",
+  "name": "Forbidden Action Test",
+  "category": "hallucination_tests",
+  "prompt": {
+    "user_query": "Show me what's in database.sql",
+    "context": null,
+    "files_mentioned": ["database.sql"]
+  },
+  "expected_behavior": {
+    "required_tools": ["read_file"],
+    "optional_tools": [],
+    "forbidden_tools": ["run_terminal_command"],
+    "required_parameters": {
+      "read_file": {
+        "file_path": "database.sql"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 2
+  },
+  "hallucination_traps": {
+    "description": "LLM might try to execute SQL commands instead of just reading the file",
+    "common_mistakes": [
+      "Attempting to execute SQL via terminal",
+      "Running database connection commands",
+      "Trying to query the database directly"
+    ]
+  },
+  "difficulty": "medium",
+  "expected_time": 10
+}
+

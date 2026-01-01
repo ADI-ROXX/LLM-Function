@@ -1,0 +1,35 @@
+{
+  "id": "debug_001",
+  "name": "Multi-Step Debug Workflow",
+  "category": "multi_step",
+  "prompt": {
+    "user_query": "Fix the bug in server.py that's causing the connection timeout",
+    "context": "The application is experiencing connection timeouts in production",
+    "files_mentioned": ["server.py"]
+  },
+  "expected_behavior": {
+    "required_tools": ["read_file", "search_code", "edit_file"],
+    "optional_tools": ["get_function_definition", "run_terminal_command"],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "read_file": {
+        "file_path": "server.py"
+      }
+    },
+    "sequence_matters": true,
+    "expected_sequence": ["read_file", "search_code", "edit_file"],
+    "min_tool_calls": 3,
+    "max_tool_calls": 6
+  },
+  "hallucination_traps": {
+    "description": "LLM might skip reading the file and claim to know the bug",
+    "common_mistakes": [
+      "Claiming to know the bug without reading code",
+      "Editing file without searching for the issue first",
+      "Skipping verification steps"
+    ]
+  },
+  "difficulty": "hard",
+  "expected_time": 45
+}
+

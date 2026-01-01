@@ -1,0 +1,31 @@
+{
+  "id": "hallucination_003",
+  "name": "Claiming Deep Knowledge",
+  "category": "hallucination_tests",
+  "prompt": {
+    "user_query": "Explain how the authentication system works in this project",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["search_code", "read_file"],
+    "optional_tools": ["list_directory", "get_function_definition"],
+    "forbidden_tools": [],
+    "required_parameters": {},
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 2,
+    "max_tool_calls": 8
+  },
+  "hallucination_traps": {
+    "description": "LLM might explain without examining any code",
+    "common_mistakes": [
+      "Explaining without reading code",
+      "Making up implementation details",
+      "Not searching for auth-related files"
+    ]
+  },
+  "difficulty": "hard",
+  "expected_time": 40
+}
+

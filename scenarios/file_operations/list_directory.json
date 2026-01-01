@@ -1,0 +1,34 @@
+{
+  "id": "file_list_001",
+  "name": "List Directory Contents",
+  "category": "file_ops",
+  "prompt": {
+    "user_query": "Show me all files in the src directory",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["list_directory"],
+    "optional_tools": [],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "list_directory": {
+        "directory_path": "src"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 1
+  },
+  "hallucination_traps": {
+    "description": "LLM might make up file listings without calling function",
+    "common_mistakes": [
+      "Inventing file names without listing",
+      "Making assumptions about directory structure"
+    ]
+  },
+  "difficulty": "easy",
+  "expected_time": 5
+}
+

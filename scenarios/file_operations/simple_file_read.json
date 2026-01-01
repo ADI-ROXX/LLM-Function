@@ -1,0 +1,34 @@
+{
+  "id": "file_read_001",
+  "name": "Simple File Read",
+  "category": "file_ops",
+  "prompt": {
+    "user_query": "What's in config.json?",
+    "context": null,
+    "files_mentioned": ["config.json"]
+  },
+  "expected_behavior": {
+    "required_tools": ["read_file"],
+    "optional_tools": [],
+    "forbidden_tools": ["write_file", "edit_file"],
+    "required_parameters": {
+      "read_file": {
+        "file_path": "config.json"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 2
+  },
+  "hallucination_traps": {
+    "description": "LLM might say 'I'll read the file' but not actually call read_file",
+    "common_mistakes": [
+      "Claiming to read file without calling function",
+      "Making up file contents without reading"
+    ]
+  },
+  "difficulty": "easy",
+  "expected_time": 5
+}
+

@@ -1,0 +1,35 @@
+{
+  "id": "search_004",
+  "name": "Get Specific Function Code",
+  "category": "code_search",
+  "prompt": {
+    "user_query": "Show me the code for the validate_email function",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["get_function_definition"],
+    "optional_tools": ["search_code"],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "get_function_definition": {
+        "function_name": "validate_email"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 2
+  },
+  "hallucination_traps": {
+    "description": "LLM might generate function code without looking it up",
+    "common_mistakes": [
+      "Writing function code from memory",
+      "Not using get_function_definition",
+      "Making up implementation"
+    ]
+  },
+  "difficulty": "easy",
+  "expected_time": 10
+}
+

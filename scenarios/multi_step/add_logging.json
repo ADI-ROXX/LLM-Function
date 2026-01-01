@@ -1,0 +1,31 @@
+{
+  "id": "multi_003",
+  "name": "Add Logging to Function",
+  "category": "multi_step",
+  "prompt": {
+    "user_query": "Add debug logging at the start and end of the process_data function in processor.py",
+    "context": null,
+    "files_mentioned": ["processor.py"]
+  },
+  "expected_behavior": {
+    "required_tools": ["read_file", "get_function_definition", "edit_file"],
+    "optional_tools": ["search_code"],
+    "forbidden_tools": [],
+    "required_parameters": {},
+    "sequence_matters": true,
+    "expected_sequence": ["read_file", "get_function_definition", "edit_file"],
+    "min_tool_calls": 3,
+    "max_tool_calls": 5
+  },
+  "hallucination_traps": {
+    "description": "LLM might not read function first to understand structure",
+    "common_mistakes": [
+      "Not reading the function before editing",
+      "Adding logging in wrong places",
+      "Not verifying function structure"
+    ]
+  },
+  "difficulty": "medium",
+  "expected_time": 20
+}
+

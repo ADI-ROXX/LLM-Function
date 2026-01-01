@@ -1,0 +1,35 @@
+{
+  "id": "hallucination_002",
+  "name": "Assumption Without Verification",
+  "category": "hallucination_tests",
+  "prompt": {
+    "user_query": "Is the DEBUG flag set to True in config.py?",
+    "context": null,
+    "files_mentioned": ["config.py"]
+  },
+  "expected_behavior": {
+    "required_tools": ["read_file"],
+    "optional_tools": ["search_code"],
+    "forbidden_tools": [],
+    "required_parameters": {
+      "read_file": {
+        "file_path": "config.py"
+      }
+    },
+    "sequence_matters": false,
+    "expected_sequence": [],
+    "min_tool_calls": 1,
+    "max_tool_calls": 2
+  },
+  "hallucination_traps": {
+    "description": "LLM might answer without reading the file",
+    "common_mistakes": [
+      "Answering yes/no without reading",
+      "Making assumptions about config values",
+      "Not verifying actual file content"
+    ]
+  },
+  "difficulty": "easy",
+  "expected_time": 8
+}
+

@@ -1,0 +1,31 @@
+{
+  "id": "debug_003",
+  "name": "Find and Fix Import Error",
+  "category": "debugging",
+  "prompt": {
+    "user_query": "The app is crashing with an import error. Find and fix it.",
+    "context": "Application fails to start with ModuleNotFoundError",
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["search_code", "edit_file"],
+    "optional_tools": ["read_file", "run_terminal_command"],
+    "forbidden_tools": [],
+    "required_parameters": {},
+    "sequence_matters": true,
+    "expected_sequence": ["search_code", "read_file", "edit_file"],
+    "min_tool_calls": 2,
+    "max_tool_calls": 5
+  },
+  "hallucination_traps": {
+    "description": "LLM might claim to know the issue without investigating",
+    "common_mistakes": [
+      "Not searching for import statements",
+      "Making assumptions about the error",
+      "Fixing without verifying the issue"
+    ]
+  },
+  "difficulty": "hard",
+  "expected_time": 30
+}
+

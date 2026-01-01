@@ -1,0 +1,31 @@
+{
+  "id": "hallucination_004",
+  "name": "Silent Code Generation",
+  "category": "hallucination_tests",
+  "prompt": {
+    "user_query": "Add error handling to the login function",
+    "context": null,
+    "files_mentioned": []
+  },
+  "expected_behavior": {
+    "required_tools": ["search_code", "read_file", "edit_file"],
+    "optional_tools": ["get_function_definition"],
+    "forbidden_tools": [],
+    "required_parameters": {},
+    "sequence_matters": true,
+    "expected_sequence": ["search_code", "read_file", "edit_file"],
+    "min_tool_calls": 3,
+    "max_tool_calls": 6
+  },
+  "hallucination_traps": {
+    "description": "LLM might describe changes without making them",
+    "common_mistakes": [
+      "Explaining what to add without editing",
+      "Not finding the login function first",
+      "Generating code in response without using edit_file"
+    ]
+  },
+  "difficulty": "hard",
+  "expected_time": 30
+}
+
